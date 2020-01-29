@@ -13,7 +13,12 @@
 				{
 					"type":"mqtt",
 					"topic": "site-monitor"
-				}
+				},
+        {
+          "type":"pushover",
+          "devicename": "MyPhone",
+					"account": "primary"
+        }
 			]
 		}
 	],
@@ -44,6 +49,11 @@
                                 "password":       "my_password"
                         }
 		]
-	}
-	
+	},
+	"pushover": {
+		"primary": {
+		  "usertoken": "token_from_your_account",
+    	"apptoken": "token_from_your_application"
+		}
+  }
 }

@@ -1,6 +1,7 @@
-# Node Site Monitor
+# Node Site Monitor with Pushover support  
 
-A simple node server that will check the status of any number of websites and alert any number of users in different ways.
+A simple node server that will check the status of any number of websites and alert any number of users in different ways.  
+Fork from ollieparser and I have added support for Pushover.  
 
 ## Why do this??
 
@@ -52,6 +53,8 @@ The different ways of sending alerts to users. Users can have multiple methods, 
 * MQTT - MQ Telemetry Transport
     * Supply an array of brokers to connect to
     * Supply a different topic for each user
+* PushOver:
+    * Download the PushOver app or go to pushover.net  
 * Make your own... just extend the base communication class lib/communication/base.js
 
 
