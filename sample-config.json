@@ -1,59 +1,60 @@
 {
-	"storage": {
-		"type": "stdout"
-	},
-	"users": [
-		{		
-			"username":"ollie",
-			"contact_methods":[
-				{
-					"type":"email",
-					"address": "site_alerts@hootware.com"	
-				},
-				{
-					"type":"mqtt",
-					"topic": "site-monitor"
-				},
+  "storage": {
+    "type": "stdout"
+  },
+  "email": {
+    "sender": "awesome@node-site-monitor.com",
+    "service": "Gmail",
+    "username": "some@gmail.com",
+    "password": "password1234"
+  },
+  "mqtt": {
+    "brokers": [
+      {
+        "host": "127.0.0.1",
+        "port": 1883,
+        "secure": false,
+        "clientIdPrefix": "prefix_",
+        "username": "my_username",
+        "password": "my_password"
+      }
+    ]
+  },
+  "pushover": {
+    "primary": {
+      "usertoken": "token_from_your_account",
+      "apptoken": "token_from_your_application"
+    }
+  },
+  "users": [
+    {
+      "username": "ollie",
+      "contact_methods": [
         {
-          "type":"pushover",
+          "type": "email",
+          "address": "site_alerts@hootware.com"
+        },
+        {
+          "type": "mqtt",
+          "topic": "site-monitor"
+        },
+        {
+          "type": "pushover",
           "devicename": "MyPhone",
-					"account": "primary"
+          "account": "primary"
         }
-			]
-		}
-	],
-	"sites": [
-		{
-			"type": "http",
-			"name": "OllieParsley.com",
-			"url": "http://ollieparsley.com/dsadsa?dsadsa",
-			"content": "Ollie Parsley",
-			"interval": 60,
-			"timeout": 5
-		}
-	],
-	"email": {
-		"sender": "awesome@node-site-monitor.com",
-		"service": "Gmail",
-		"username": "some@gmail.com",
-		"password": "password1234"
-	},
-	"mqtt": {
-                "brokers": [
-                        {
-                                "host":           "127.0.0.1",
-                                "port":           1883,
-                                "secure":         false,
-                                "clientIdPrefix": "prefix_",
-                                "username":       "my_username",
-                                "password":       "my_password"
-                        }
-		]
-	},
-	"pushover": {
-		"primary": {
-		  "usertoken": "token_from_your_account",
-    	"apptoken": "token_from_your_application"
-		}
-  }
+      ]
+    }
+  ],
+  "sites": [
+    {
+      "type": "http",
+      "name": "OllieParsley.com",
+      "url": "http://ollieparsley.com/dsadsa?dsadsa",
+      "content": "Ollie Parsley",
+      "interval": 60,
+      "timeout": 5,
+      "downtime": [4,5]
+    }
+  ]
 }
