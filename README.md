@@ -1,7 +1,7 @@
 # Node Site Monitor with Pushover support  
 
 A simple node server that will check the status of any number of websites and alert any number of users in different ways.  
-Fork from ollieparser and I have added support for Pushover.  
+Fork from ollieparser and I have added support for Pushover, and added several features.
 
 ## Why do this??
 
@@ -23,7 +23,7 @@ git clone git://github.com/hootware/node-site-monitor.git
 
 This will use the config.json file
 ```
-node site-monitor
+npm run start
 ```
 
 ### Code
@@ -43,7 +43,9 @@ The different ways that are checked to see the status of a site
 * Check for connect timeouts
 * Check to see if text on the page matches what is expected
 
-## Alert types
+## Alerts
+Alerts are sent through several different types. An alert is sent when the status changes from up to down or down to up.
+A reminder is sent when a service is down for over 24 hours.  
 
 The different ways of sending alerts to users. Users can have multiple methods, each with different "availability windows"
 
@@ -75,3 +77,11 @@ The arrays in the config don't have any soft limits, so the only limits will be 
 If you want to change the config, you need to restart the application.
 
 Copy the `sample-config.json` and rename to `config.json` then start the application.
+
+
+## Using PM2
+When you want to use pm2, start using:
+```
+pm2 start npm --name "node site monitor" -- run start  
+```
+Don't forget to do pm2 save when done...
