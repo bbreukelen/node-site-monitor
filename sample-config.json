@@ -55,6 +55,17 @@
       "interval": 60,
       "timeout": 5,
       "downtime": [4,5]
+    },
+    {
+      "type": "https",
+      "name": "Timed check",
+      "url": "https://myapi.somedomain.com/weather?time=[EPOCH]",
+      "content": [
+        "degrees",
+        "date="
+      ],
+      "interval": 60,
+      "timeout": 5
     }
   ]
 }
