@@ -45,7 +45,7 @@ The different ways that are checked to see the status of a site
 
 ## Alerts
 Alerts are sent through several different types. An alert is sent when the status changes from up to down or down to up.
-A reminder is sent when a service is down for over 24 hours.  
+A reminder is sent when a service is down for over 1 hour. 
 
 The different ways of sending alerts to users. Users can have multiple methods, each with different "availability windows"
 
